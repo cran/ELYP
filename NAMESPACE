@@ -1,0 +1,15 @@
+
+useDynLib(ELYP)
+export(cumsumsurv)
+export(myLLfun, myLLfun2, Pfun, Pfun2)
+export(myffitYP3, myffitYP4, myffitYP41, myffitYP411, myffitYP412)
+export(YP3, YP4, YP41)
+export(fitYP3, fitYP4, fitYP41)
+export(ELcomp, Haz3, Haz4)
+export(findU3, findU32, findU4, findL4, findL3, findU2d, findL2d)
+export(CoxFindL2, CoxFindU2, CoxFindL3, CoxFindU3)
+export(BJfindL2, BJfindU2)
+export(simuDataYP, rYP)
+export(CoxEL, ELrange)
+
+importFrom(survival, Surv, survreg)

@@ -1,0 +1,84 @@
+
+OVERVIEW
+
+Yang and Prentice (2005) model is an extension of Cox proportional hazards model.
+Yang and Prentice (YP) model have several parameters: beta1, beta2 which are the short and long
+term hazard ratios (say, for treatment). It also have the parameter H(t), the baseline hazard function.
+Sometimes, it also have a parameter alpha, which is the regression parameter that is proportional hazards
+for additional covariates. i.e. the influence of this covariate is assumed proportional hazards.
+
+ * Since the H(t) is infinite dimensional, when we say given H(t), we mean given/fix a finite dimensional 
+ feature of H(t), (the integral of H(t) wrt fun). The rest of H(t) still needs to be find as the (constrained) NPMLE.
+
+1. For YP models with given/fixed parameters (all given) and just compute the log likelihood, (and the constrained
+      NPMLE of baseline, see above * ) we have the function 
+
+fitYP3( )   for given beta1, beta2, alpha and given lam, fun;  it finds the baseline that is constrained
+            by lam, and fun. and the log likelihood.
+			
+			The un-constrained NPMLE of the H(t) is always given when lam=0.
+			So, if you do not want to put constraint on the baseline, simply put lam=0 (with any fun). 
+			And in this case, Mulam (depend on fun) is the un-constrained NPMLE of the feature).
+			
+			The NPMLE of alpha, beta1 and beta2 (i.e. no constraint on these parameters) are harder to find
+			compared to Cox model.
+			
+
+2.  For YP models, given/fixed beta1, beta2 parameters, but without constraint on the baseline H(t), without
+    constraint on alpha: we can use the function
+
+fitYP4( )  to find the NPMLE of alpha and H(t) for the given beta1 and beta2, and its log likelihood.
+
+           If we further maximize the log likelihood given by fitYP4( ) over beta1 and beta2, we shall
+		   get the NPMLE of beta1 and beta2. Plug these beta1 and beta2 back into fitYP4( ), we get the 
+		   NPMLE of alpha and H(t).
+		   
+		   Maximize over beta1 and beta2 can be done using optim( ) function in R. For example see web page.
+		   Or a search function similar to findU3 can be written.
+
+2.5.  So, to find NPMLE in the YP model with alpha, we could use optim( ) in conjuction with 
+      either fitYP3() or fitYP4(). If using fitYP3() then there are 3 parameters for optim() to search the max/min
+	  (they are beta1, beta2 and alpha). fitYP3() will find the NPMLE of baseline.
+	  If using fitYP4(), then there 2 parameters for optim() to search
+	  the max/min (they are beta1 and beta2). fitYP4() will find the NPMLE of alpha (and baseline).
+
+3. For simpler YP models that without parameter alpha, a similar (but simpler, faster) function to fitYP4( ) is the 
+   function fitYP41( ).
+
+   Function fitYP41( ) is for the simpler YP models (YP model without alpha), given beta1 and beta2, but without 
+   constraint on the baseline, it compute the NPMLE of the baseline for the given beta1, beta2 and related log likelihood.
+
+fitYP41( )   Again, if we further maximize the log likelihood returned by fitYP41( ) over beta1 and beta2, we shall
+             get the NPMLE of beta1 and beta2 (in the simpler YP model). Plug this beta1 and beta2 back into fitYP41( )
+			 we get the NPMLE of H(t) [in the simpler YP model].
+			 
+			 Maximize over beta1 and beta2 can be done using optim() function in R (for examples see web page). Or we can 
+			 write a search function like findU3(), (may be called findMax?)
+
+
+3.5.    If you want to put constrains on the baseline, in the simpler YP model (i.e. model without alpha), you may still
+        use the function fitYP3( ), but put all alphaX_i =0.
+			 
+4.  To find confidence intervals, we need yet more functions. [similar to findU3( ) findL3() ]
+
+      Basically functions similar to findU3(), but simpler. It try to find upper/lower confidence interval 
+	  for beta1/beta2.
+	  
+	  findU2d( ) is designed to find the upper 95 percent confidence limit for beta1. A mirror image findL2d()
+      can be written but not included here. And certainly similar functions to find confidence interval for beta2
+      can be written.  	  
+ 
+ 
+5.  Find confidence interval for a quantity that involves beta1, beta2, and features of H(t). A primary example
+     is the hazard ratio at given time: G(t)exp(beta1)+ [1-G(t)]exp(beta2). Use function findU3( ) and findL3().
+	 
+5.5  Find the confidence interal for the hazard ratio at given time, in the YP model with alpha, can be done using
+    function findU4( ).  This is similar to findU3 with the search is over one more parameter, alpha. It is slow.
+	To run it on the Gastric Cancer data took 1 to 2 minutes (on Core2 duo windows 7).
+	
+6.  For data generating, that follow the Yang and Prentice model, use simuDataYP( ). It use the exponential distribution
+    for one arm, and the other arm is having a cross hazard, with beta1 and beta2 as the short and long term hazard 
+	ratio.
+	
+	
+7. The functions starts with Cox are for use with Cox models.	
