@@ -12,7 +12,7 @@ This program uses simple search to find the Lower 95\% Wilks confidence limits b
     \item{StepSize}{a vector of length 3. Approx. length of the 3 conf. intervals: beta1, beta2 and lambda.}
     \item{Hfun}{a function that defines the baseline feature, mu.} 
     \item{Efun}{a function that takes the input of 3 parameter values (beta1, beta2 and Mulam) and 
-         returns a parameter that we wish to find the confidence Interval Lower Value. }
+         returns a parameter that we wish to find the confidence Interval Lower Value. The input variables must be called beta and theta. beta: in the form of a 2-d vector (i.e., the beta1, beta2) and theta: (=Mulam)}
     \item{y}{a vector of censored survival time.}
     \item{d}{a vector of 0 and 1}
     \item{Z}{covariates of the Cox model.}
@@ -25,7 +25,8 @@ This program uses simple search to find the Lower 95\% Wilks confidence limits b
 }
 \details{
 
-Basically we repeatedly testing the value of the parameter, until we find those
+Basically we repeatedly testing the value of the parameter (defined by Efun), try to go to lower and lower values of the 
+parameter until we find those
 which the -2 log likelihood value is equal to 3.84 (or other level, if set differently).
 
 }

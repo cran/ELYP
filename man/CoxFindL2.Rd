@@ -5,14 +5,14 @@
 CoxFindL2(BetaMLE, StepSize, Hfun, Efun, y, d, Z, level=3.84)
 }
 \description{
-This function uses simple search to find the upper level (default 95\%) Wilks confidence limits based on the CoxEL( ) function.
+This function uses simple search to find the lower level (default 95\%) Wilks confidence limits based on the CoxEL( ) likelihood function.
 }
 \arguments{
     \item{BetaMLE}{a scalar: the NPMLEs: beta1 hat.}
     \item{StepSize}{a vector of length 2. Approx. length of the 2 conf. intervals: beta1, and lambda.}
-    \item{Hfun}{a function that defines the baseline feature: mu.} 
-    \item{Efun}{a function that takes the input of 3 parameter values (beta1 and Mulam) and 
-         returns a parameter that we wish to find the confidence Interval Upper Value. }
+    \item{Hfun}{a function that defines the baseline feature: mu or sometimes called Mulam.} 
+    \item{Efun}{a function that takes the input of 2 parameter values (beta1 and Mulam) and 
+         returns a parameter that we wish to find the confidence interval lower value. The two input variables must be named beta and theta.}
     \item{y}{the censored survival times. }
     \item{d}{vector of 0, and 1}
     \item{Z}{matrix of covariates}
@@ -38,15 +38,22 @@ which the -2 log likelihood value is equal to 3.84 (or other level, if set diffe
 
 }
 \examples{
-## Here Mulam is the value of int g(t) d H(t) = Mulam
-## For example g(t) = I[ t <= 2.0 ]; look inside myLLfun(). 
+## We find 95% lower limit of theta= \Lambda_0(300) exp(\beta)
+## where \Lambda and \beta are inside a Cox model.
+## First we define a function (Hfun) = I[t <= 300], so that
+## the baseline feature is \Lambda_0(300). The second function
+## we need to define is (Efun) = what we called theta above.
 
-data(GastricCancer)
+data(smallcell)
+myHfun <- function(t){as.numeric(t <= 300)}
+myEfun <- function(beta, theta){theta*exp(beta)}
 
-# The following will take about 0.5 min to run.
-# findU3(NPmle=c(1.816674, -1.002082), ConfInt=c(1.2, 0.5, 10),   
-#        LogLikfn=myLLfun, Pfun=Pfun, dataMat=GastricCancer)
+myy <- smallcell$survival
+myd <- smallcell$indicator
+myZ <- smallcell$arm
 
+CoxFindL2(BetaMLE=0.5337653, StepSize=c(0.1, 3), 
+          Hfun=myHfun, Efun=myEfun, y=myy, d=myd, Z=myZ)
 }
 \keyword{nonparametric}
 \keyword{htest}

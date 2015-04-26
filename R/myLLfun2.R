@@ -14,5 +14,5 @@ b2 <- mle[2]
 a <- mle[3]
 lam <- mle[4]
 ftemp <- fitYP3(Y=dataMat[1,], d=dataMat[2,], Z=t(dataMat[3:4,]), beta1=c(a,b1), beta2=c(a,b2), lam=lam, fun=fun)
-list(Mulam=ftemp$MuLam, Loglik=ftemp$EmpLik)
+list(Mulam=ftemp$MuLam, Loglik=ftemp$LogEmpLik)
 }

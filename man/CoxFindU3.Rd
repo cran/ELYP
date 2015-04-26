@@ -12,7 +12,7 @@ This program uses simple search to find the upper 95\% Wilks confidence limits b
     \item{StepSize}{a vector of length 3. Approx. length of the 3 conf. intervals: beta1, beta2 and lambda.}
     \item{Hfun}{a function that defines the baseline feature: mu.} 
     \item{Efun}{a function that takes the input of 3 parameter values (beta1, beta2 and Mulam) and 
-         returns a parameter that we wish to find the confidence Interval Upper Value. }
+         returns a parameter that we wish to find the confidence Interval Upper Value. The input variable must be in the form: beta = c(beta1, beta2) and theta = Mulam.}
     \item{y}{a matrix. }
     \item{d}{a vector of 0 and 1}
     \item{Z}{covariates}
@@ -21,7 +21,7 @@ This program uses simple search to find the upper 95\% Wilks confidence limits b
 \value{
     A list with the following components:
     \item{Upper}{the upper confidence bound.}
-    \item{maxParameterNloglik}{Final values of the 4 parameters, and  the log likelihood.}
+    \item{maxParameterNloglik}{Final values of the 4 parameters (beta1, beta2, Mulam, lam), and  the log likelihood.}
 }
 \details{
 

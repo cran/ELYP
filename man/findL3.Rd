@@ -49,7 +49,7 @@ return(TrtCon)
 
 data(GastricCancer)
 
-# The following will take about 0.5 min to run.
+# The following will take about 10 sec. to run on i7 CPU.
 # findL3(NPmle=c(1.816674, -1.002082), ConfInt=c(1.2, 0.5, 10),   
 #           LogLikfn=myLLfun, Pfun=Pfun, dataMat=GastricCancer)
 

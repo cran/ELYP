@@ -5,10 +5,10 @@
 simuDataYP(n1, n2, th1, th2, cens, alphaX)
 }
 \description{
-This function is for simulations. It generate data with given/known parameters and may be used later to see
-how well some estimation procedure works on them. th1 = exp(beta1), th2 = exp(beta2), alphaX = a^T X.
-There is always a covariate Z that indicate the two samples, and the hazards of the two treatments follows
-YP model. The baseline hazard of sample one (where Z=0) is taken to be exponential.
+This function is for simulations. It generates data with given/known parameters and may be used later to see
+how well some estimation procedure works on them. th1 = exp(beta1), th2 = exp(beta2), alphaX = $a' X$.
+There is always a covariate Z that indicates the two samples, and the hazards of the two treatments follows
+Yang--Prentice model. The baseline hazard of sample one (where Z=0) is taken to be exponential.
 }
 \arguments{
     \item{n1}{sample size of first arm.}
@@ -16,7 +16,7 @@ YP model. The baseline hazard of sample one (where Z=0) is taken to be exponenti
     \item{th1}{the parameter of th1=exp(beta1). Short term.}
 	\item{th2}{the parameter of th2=exp(beta2). Long term. }
     \item{cens}{logical, Either TRUE or FALSE.}
-	\item{alphaX}{a vector of length n1+n2. It is the inner product of alpha and covariates X....the part that is proportional hazard. 
+	\item{alphaX}{a vector of length n1+n2. It is the inner product of alpha and covariates X....the part that is proportional hazards. 
 	This way, alpha can be p dimensional, However alpha times X is always a vector of length n1+n2.}
 }
 \value{

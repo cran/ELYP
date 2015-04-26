@@ -41,7 +41,7 @@ which the -2 log likelihood value is equal to 3.84 (or other level, if set diffe
 
 data(GastricCancer)
 
-# The following will take about 0.5 min to run.
+# The following will take about 10 sec. to run on an i7 CPU.
 # findU3(NPmle=c(1.816674, -1.002082), ConfInt=c(1.2, 0.5, 10),   
 #          LogLikfn=myLLfun, Pfun=Pfun, dataMat=GastricCancer)
 

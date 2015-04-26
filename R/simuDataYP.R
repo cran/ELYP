@@ -17,7 +17,7 @@ Y1 <- Y1/EaX1
 
 Y2 <- rYP(th1=th1, th2=th2, n=n2, aX=alphaX[(n1+1):(n1+n2)])
 Y12 <- c(Y1, Y2)
-censor <- rexp(n1+n2, rate=1)  ## change for different censor percentage
+censor <- rexp(n1+n2, rate=0.5)  ## change for different censor percentage
 if(!cens) censor <- censor + Inf
 Y <- pmin(Y12, censor)
 d <- as.numeric( Y12 <= censor )

@@ -12,7 +12,7 @@ A sister function to CoxFindL2().}
     \item{StepSize}{a vector of length 2. Approx. length of the 2 conf. intervals: beta1, and lambda.}
     \item{Hfun}{a function that defines the baseline feature: mu.} 
     \item{Efun}{a function that takes the input of 2 parameter values (beta1, and Mulam) and 
-         returns a parameter that we wish to find the confidence Interval Upper Value. }
+         returns a parameter that we wish to find the confidence Interval Upper Value. The two input variables must be called beta and theta.}
     \item{y}{a vector of censored survival times. }
     \item{d}{a vector of 0 and 1}
     \item{Z}{covariates for the Cox model}
@@ -38,15 +38,9 @@ which the -2 log likelihood value is equal to 3.84 (or other level, if set diffe
 
 }
 \examples{
+## See example in CoxFindL2.
 ## Here Mulam is the value of int g(t) d H(t) = Mulam
 ## For example g(t) = I[ t <= 2.0 ]; look inside myLLfun(). 
-
-data(GastricCancer)
-
-# The following will take about 0.5 min to run.
-# findU3(NPmle=c(1.816674, -1.002082), ConfInt=c(1.2, 0.5, 10),   
-#         LogLikfn=myLLfun, Pfun=Pfun, dataMat=GastricCancer)
-
 }
 \keyword{nonparametric}
 \keyword{htest}
