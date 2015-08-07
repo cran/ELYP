@@ -12,8 +12,8 @@ This function finds the NPMLE of alpha and baseline, for the given beta1 and bet
     \item{Y}{a vector containing the observed survival times.}
     \item{d}{a vector containing the censoring indicators, 1-uncensored; 0-right censored.}
     \item{Z}{a vector of ...}
-    \item{beta1}{a scalar. } 
-    \item{beta2}{a scalar. }
+    \item{beta1}{a scalar. short term} 
+    \item{beta2}{a scalar. long term}
     \item{maxiter}{an integer.}
 }
 \value{

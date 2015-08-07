@@ -12,7 +12,7 @@ limits based on the log likelihood function supplied.
 \arguments{
     \item{NPmle}{a vector containing the two NPMLE: beta1 hat and beta2 hat.}
     \item{ConfInt}{a vector of length 3. }
-    \item{LogLikfn}{a function that ...} 
+    \item{LogLikfn}{a function that compute the loglikelihood. Typically this has three parameters: beta1, beta2 and lam, in a Yang-Prentice model context.} 
     \item{Pfun}{a function that takes the input of 3 parameter values (beta1,beta2 and Mulam) and 
          returns a parameter that we wish to find the confidence Interval of (here only the Lower Value). }
     \item{level}{confidence level. Default to 3.84 for 95 percent.}
@@ -24,6 +24,8 @@ limits based on the log likelihood function supplied.
     \item{minParameterNloglik}{Final values of the 4 parameters, and  the log likelihood.}
 }
 \details{
+
+The empirical likelihood for Y-P model has parameters: beta1, beta2 and a baseline. The baseline is converted to a 1-d parameter feature via Hfun, and then amount controled by lam.
 
 Basically we repeatedly testing the value of the parameter, until we find those
 which the -2 log likelihood value is equal to 3.84 (or other level, if set differently).

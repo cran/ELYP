@@ -9,9 +9,9 @@ This program uses simple search to find the upper 95\% Wilks confidence limits b
 Caution: it takes about 1 min. to run on a data set of 90 obs. [GastricCancer]
 }
 \arguments{
-    \item{NPmle}{a vector containing the three NPMLEs: beta1 hat, beta2 hat and alpha hat.}
+    \item{NPmle}{a vector containing the three NPMLEs: beta1 hat, beta2 hat and alpha hat. from a Y-P model.}
     \item{ConfInt}{a vector of length 4. Approx. length of the 4 conf. intervals: beta1, beta2, alpha and lambda.}
-    \item{LogLikfn2}{a function that ...} 
+    \item{LogLikfn2}{a function that compute the empirical likelihood of the Y-P model. given the parameters beta1, beta2, alpha, and lam.} 
     \item{Pfun}{a function that takes the input of 3 parameter values (beta1,beta2 and Mulam) and 
          returns a parameter that we wish to find the confidence Interval Lower Value. }
     \item{dataMat}{a matrix. }

@@ -14,10 +14,10 @@ for(J in 1:k)  {
     para <- mle
     for( i in 1:10 ) {
     para[J] <- mle[J]+step[J]
-    temp[J,1] <- loglik( para, DataMat)
+    temp[J,1] <- loglik(para, DataMat)
     para[J] <- mle[J]-step[J]
-    temp[J,2] <- loglik( para, DataMat)
-    if ( (temp[J,1]+temp[J,2]) < BorderV )  {step[J] <- step[J]/2}
+    temp[J,2] <- loglik(para, DataMat)
+    if ( (temp[J,1]+temp[J,2]) < BorderV )  {step[J] <- step[J]/2} ##??
         else  {step[J] <- 2*step[J]}
     }
 }

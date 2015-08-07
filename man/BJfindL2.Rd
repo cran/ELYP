@@ -5,7 +5,7 @@
 BJfindL2(NPmle, ConfInt, LLRfn, Betafun, dataMat, level=3.84)
 }
 \description{
-This function uses simple search to find the lower level (default 95\%) 1 parameter Wilks confidence limits based on the Buckley-James empirical likelihood test function for two dimensional beta's. Betafun determines which 1 parameter we are finding the lower bound.
+This function uses simple search to find the lower level (default 95\%) 1 parameter Wilks confidence limits based on the Buckley-James empirical likelihood test function for two dimensional beta's. Betafun determines the 1 parameter we are finding the lower bound.
 }
 \arguments{
     \item{NPmle}{a 2-d vector: the NPMLEs: beta1 hat and beta2 hat.}

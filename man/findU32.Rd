@@ -9,8 +9,8 @@ This program uses simple search to find the upper 95\% Wilks confidence limits b
 }
 \arguments{
     \item{NPmle}{a vector containing the two NPMLEs: beta1 hat and beta2 hat.}
-    \item{ConfInt}{a vector of length 3. Approx. length of the 3 conf. intervals: beta1, beta2 and lambda.}
-    \item{LogLikfn}{a function that ...} 
+    \item{ConfInt}{a vector of length 3. Approximate length of the 3 confidence intervals: beta1, beta2 and lambda. They are used as initial search step size.}
+    \item{LogLikfn}{a function that computes the loglikelihood.} 
     \item{Pfun}{a function that takes the input of 3 parameter values (beta1, beta2 and Mulam) and 
          returns a parameter that we wish to find the confidence Interval Upper Value. }
     \item{dataMat}{a matrix. }

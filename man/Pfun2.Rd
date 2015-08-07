@@ -5,7 +5,7 @@
 Pfun2(b1, b2, a, X, Mulam)
 }
 \description{
-This function compute the hazard ratio, given beta1 beta2 a X and Mulam = int g(t) dH(t).
+This function compute the hazard ratio based on a Yang-Prentice model, given beta1, beta2, a, X and Mulam = int g(t) dH(t).
 }
 \arguments{
     \item{b1}{parameter value. = short term hazard ratio}
@@ -21,7 +21,7 @@ This function compute the hazard ratio, given beta1 beta2 a X and Mulam = int g(
 
 The flexibility also rest on the definition of Mulam: it can
 using any f(t) function. If we use indicator I[ t <= t0 ] then
-Mulam is just the baseline cumulative hazard funtion at t0. Where do you define the Mulam?
+Mulam is just the baseline cumulative hazard funtion at t0. Where do you define the Mulam? (in fitYP3....)
 
 }
 \author{ Mai Zhou }

@@ -8,9 +8,9 @@ ELrange(mle, loglik, step, DataMat)
 This function compute the hazard ratio, given beta1 beta2 a X and Mulam = int g(t) dH(t).
 }
 \arguments{
-    \item{mle}{The (NP)MLE of the parameters value. }
-    \item{loglik}{a function. Takes 2 inputs: mle amd DataMat. output one scala = loglik value.}
-    \item{step}{a vector, same length as mle. The initial step.}
+    \item{mle}{The NPMLE of the parameters value. }
+    \item{loglik}{a function. Takes 2 inputs: mle and DataMat. output one scalar = loglik value.}
+    \item{step}{a vector, same length as mle. The initial search step.}
     \item{DataMat}{The data matrix, to be used by loglik( ).}
 }
 \value{

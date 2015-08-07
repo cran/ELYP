@@ -7,19 +7,19 @@ findU2d(NPmle, ConfInt, LogLikfn, Pfun, dataMat, level=3.84)
 \description{
 This program uses simple search algorithm to find the upper 95\% Wilks confidence
 limits based on the log likelihood function supplied. The likelihood have two parameters beta1, beta2 and
-the the confidence interval is for beta1.
+the the confidence interval is for a 1-d parameter =Pfun(beta1,beta2).
 }
 \arguments{
    \item{NPmle}{a vector containing the two NPMLE: beta1 hat and beta2 hat.}
    \item{ConfInt}{a vector of length 2. These are APPROXIMATE length of confidence intervals, as initial guess.}
-   \item{LogLikfn}{a function that ...} 
-   \item{Pfun}{A function of 2 variables: NPmle[1]+NPmle[2]. Must be able to take vector input. Example: Pfun(x1, x2)= x1. }
+   \item{LogLikfn}{a function that takes the input of beta and dataMay and output the logliklihood value.} 
+   \item{Pfun}{A function of 2 variables: beta1 and beta2. Must be able to take vector input. Example: Pfun(x1, x2)= x1. }
    \item{dataMat}{a matrix of data. for the function LogLikfn.}
    \item{level}{Confidence level. Default to 3.84 (95 percent).}
 }
 \value{
     A list with the following components:
-    \item{Upper}{the upper confidence bound.}
+    \item{Upper}{the upper confidence bound for Pfun.}
     \item{maxParameterNloglik}{Final values of the 2 parameters, and the log likelihood.}
 }
 \details{

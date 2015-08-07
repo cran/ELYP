@@ -5,14 +5,14 @@
 BJfindU2(NPmle, ConfInt, LLRfn, Betafun, dataMat, level=3.84)
 }
 \description{
-This function uses simple search to find the upper level (default 95\%) 1 parameter Wilks confidence limits based on the Buckley-James empirical likelihood test function for two dimensional beta's. Which 1 parameter, is determined by Betafun.
+This function uses simple search to find the upper level (default 95\%) 1 parameter Wilks confidence limits based on the Buckley-James empirical likelihood test function for two dimensional beta's. The confidece interval is for the 1 parameter, determined by Betafun.
 }
 \arguments{
     \item{NPmle}{a 2-d vector: the NPMLEs: beta1 hat and beta2 hat.}
     \item{ConfInt}{a vector of length 2. Approx. length of the 2 conf. intervals for beta1 and beta2. May use the SD from bj(). }
     \item{LLRfn}{a function that returns the -2LLR.} 
     \item{Betafun}{a function that takes the input of 2 parameter values (beta1, beta2) and 
-         returns a parameter that we wish to find its confidence Interval lower Value. }
+         returns a parameter that we wish to find its confidence Interval Lower Value. }
     \item{dataMat}{matrix of covariates}
     \item{level}{confidence level.}
 }

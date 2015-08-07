@@ -9,7 +9,7 @@ This function compute the hazard ratio, given beta1 beta2 and Mulam = int g(t) d
 }
 \arguments{
     \item{b1}{a scalar, the parameter value.}
-    \item{b2}{a scalar parameter.}
+    \item{b2}{a scalar, parameter.}
     \item{Mulam}{ It is int f(t)dH(t)= Mulam.}
 }
 \value{

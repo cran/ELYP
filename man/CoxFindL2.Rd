@@ -1,6 +1,6 @@
 \name{CoxFindL2}
 \alias{CoxFindL2}
-\title{Find the Wilks Confidence Interval Lower Bound for Efun from the Empirical Likelihood Ratio Function CoxEL}
+\title{Find the Wilks Confidence Interval Lower Bound for Efun based on the Empirical Likelihood Ratio Function CoxEL}
 \usage{
 CoxFindL2(BetaMLE, StepSize, Hfun, Efun, y, d, Z, level=3.84)
 }
@@ -9,12 +9,12 @@ This function uses simple search to find the lower level (default 95\%) Wilks co
 }
 \arguments{
     \item{BetaMLE}{a scalar: the NPMLEs: beta1 hat.}
-    \item{StepSize}{a vector of length 2. Approx. length of the 2 conf. intervals: beta1, and lambda.}
-    \item{Hfun}{a function that defines the baseline feature: mu or sometimes called Mulam.} 
+    \item{StepSize}{a vector of length 2. Approximate length of the 2 confidence intervals: beta1, and lambda.}
+    \item{Hfun}{a function that defines the baseline feature: int f(t)dH(t)= mu or sometimes called Mulam.} 
     \item{Efun}{a function that takes the input of 2 parameter values (beta1 and Mulam) and 
          returns a parameter that we wish to find the confidence interval lower value. The two input variables must be named beta and theta.}
     \item{y}{the censored survival times. }
-    \item{d}{vector of 0, and 1}
+    \item{d}{vector of 0, and 1, censoring indicator}
     \item{Z}{matrix of covariates}
     \item{level}{confidence level. Using chi-square(df=1), but calibration possible.}
 }

@@ -9,10 +9,10 @@ This program uses simple search to find the upper 95\% Wilks confidence limits b
 }
 \arguments{
     \item{BetaMLE}{a vector containing the two NPMLEs: beta1 hat and beta2 hat.}
-    \item{StepSize}{a vector of length 3. Approx. length of the 3 conf. intervals: beta1, beta2 and lambda.}
+    \item{StepSize}{a vector of length 3. Approximate length of the 3 confidence intervals: beta1, beta2 and lambda.}
     \item{Hfun}{a function that defines the baseline feature: mu.} 
     \item{Efun}{a function that takes the input of 3 parameter values (beta1, beta2 and Mulam) and 
-         returns a parameter that we wish to find the confidence Interval Upper Value. The input variable must be in the form: beta = c(beta1, beta2) and theta = Mulam.}
+         returns a parameter that we wish to find the confidence Interval Upper Value. The input variables must be in the form: beta = c(beta1, beta2) and theta = Mulam.}
     \item{y}{a matrix. }
     \item{d}{a vector of 0 and 1}
     \item{Z}{covariates}

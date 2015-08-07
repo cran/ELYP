@@ -12,4 +12,5 @@ export(BJfindL2, BJfindU2)
 export(simuDataYP, rYP)
 export(CoxEL, ELrange)
 
-importFrom(survival, Surv, survreg)
+importFrom("stats", "rexp", "runif")
+importFrom("survival", "Surv", "survreg")

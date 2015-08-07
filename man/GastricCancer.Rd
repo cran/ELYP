@@ -6,7 +6,7 @@ There are 90 observations on 4 variables.
 Times is the survival times in years.
 Status is the censoring status. 
 ax is the covariate that satisfy proportional hazards assumptions. 
-zo is the covariate that indicating the two treatments, which we suppose follow the YP model.
+zo is the covariate that indicating the two treatments, which we suppose follow the Y-P model.
 For more details please see the reference below.
 
 Data are from 

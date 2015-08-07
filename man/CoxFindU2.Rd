@@ -6,15 +6,15 @@ CoxFindU2(BetaMLE, StepSize, Hfun, Efun, y, d, Z, level=3.84)
 }
 \description{
 This function uses simple search to find the upper 95\% Wilks confidence limits based on the log likelihood function supplied.
-A sister function to CoxFindL2().}
+This is a sister function to CoxFindL2().}
 \arguments{
     \item{BetaMLE}{a scalar: the NPMLE beta1 hat.}
-    \item{StepSize}{a vector of length 2. Approx. length of the 2 conf. intervals: beta1, and lambda.}
-    \item{Hfun}{a function that defines the baseline feature: mu.} 
+    \item{StepSize}{a vector of length 2. Approximate length of the 2 confidence intervals: beta1, and lambda. It is the initial search step size.}
+    \item{Hfun}{a function that defines the baseline feature: mu=int f(t) dH(t).} 
     \item{Efun}{a function that takes the input of 2 parameter values (beta1, and Mulam) and 
          returns a parameter that we wish to find the confidence Interval Upper Value. The two input variables must be called beta and theta.}
     \item{y}{a vector of censored survival times. }
-    \item{d}{a vector of 0 and 1}
+    \item{d}{a vector of 0 and 1, censoring indicator.}
     \item{Z}{covariates for the Cox model}
     \item{level}{Confidence Level. Use chi-square(df=1), but calibration possible.}
 }

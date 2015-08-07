@@ -9,7 +9,7 @@ myLLfun(mle, dataMat, fun)
 This function is similar to \code{fitYP3}. Just streamline input and output.
 }
 \arguments{
-    \item{mle}{a vector of length 3, containing the parameter values: beta1, beta2 and lam. Do not have to be MLE.}
+    \item{mle}{a vector of length 3, containing the parameter values: beta1, beta2 and lam. They do not have to be the MLE.}
     \item{dataMat}{a matrix of 4 by n. But the 4th row do not matter, since alpha=0 here always.}
     \item{fun}{a function, used in the definition of int f(t)dH(t)= Mulam.}
 }
@@ -19,7 +19,7 @@ This function is similar to \code{fitYP3}. Just streamline input and output.
     \item{Loglik}{The log empirical likelihood.}
 }
 \details{
-Say something.
+We assume a Y-P model. and with the given parameters (in the input mle) we compute the baseline hazard and compute the (parameter constrained) empirical likelihood value.
 }
 \author{ Mai Zhou }
 \references{

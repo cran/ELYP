@@ -13,9 +13,9 @@ This function fits the baseline for given beta1 beta2 and lam; and then compute 
     \item{d}{a vector containing the censoring indicators, 1-uncensored; 0-right censored.}
     \item{Z}{a matrix of covariates (Xi and Zi)...}
     \item{beta1}{a vector = (alpha, beta1). } 
-    \item{beta2}{a vectoe = (alpha, beta2). }
+    \item{beta2}{a vector = (alpha, beta2). }
     \item{lam}{a scalar. tilting parameter for the baseline. When lam=0, then there is no tilting.}
-    \item{fun}{a function. It determine what feature of baseline lam tilts.}
+    \item{fun}{a function. It determine what feature of the baseline lam tilts.}
 }
 \value{
     A list with the following components:

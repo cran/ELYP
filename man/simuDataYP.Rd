@@ -5,9 +5,10 @@
 simuDataYP(n1, n2, th1, th2, cens, alphaX)
 }
 \description{
-This function is for simulations. It generates data with given/known parameters and may be used later to see
+This function is for simulations. It generates data from Yang-Prentice model with given/known parameters and may be 
+used later to see
 how well some estimation procedure works on them. th1 = exp(beta1), th2 = exp(beta2), alphaX = $a' X$.
-There is always a covariate Z that indicates the two samples, and the hazards of the two treatments follows
+There is always a covariate Z that indicates the two samples, and the hazards of the two treatments follows the
 Yang--Prentice model. The baseline hazard of sample one (where Z=0) is taken to be exponential.
 }
 \arguments{
@@ -36,7 +37,7 @@ where S_0 and F_0 are survival function and CDF of a standard exponential random
 }
 \author{ Mai Zhou }
 \references{
-    Yang and Prientice. (2005). 
+    Yang and Prientice. (2005). Semiparametric analysis of short term/long term hazard ratios with two sample survival data.
     \emph{Biometrika}
 }
 \examples{

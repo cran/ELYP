@@ -9,12 +9,12 @@ This program uses simple search to find the upper 95\% Wilks confidence limits b
 }
 \arguments{
     \item{NPmle}{a vector containing the two NPMLEs: beta1 hat and beta2 hat.}
-    \item{ConfInt}{a vector of length 3. Approx. length of the 3 conf. intervals: beta1, beta2 and lambda.}
-    \item{LogLikfn}{a function that ...} 
+    \item{ConfInt}{a vector of length 3. Approximate length of the 3 confidence intervals: beta1, beta2 and lambda. They are used as initial search steps.}
+    \item{LogLikfn}{a function that takes input of beta1, beta2 lam, dataMat, and output the log likelihood value.} 
     \item{Pfun}{a function that takes the input of 3 parameter values (beta1,beta2 and Mulam) and 
          returns a parameter that we wish to find the confidence Interval Upper Value. }
     \item{level}{confidence level, default to 3.84 for 95 percent.}
-    \item{dataMat}{a matrix. }
+    \item{dataMat}{a matrix. for the loglik computation.}
 }
 \value{
     A list with the following components:
@@ -41,7 +41,7 @@ which the -2 log likelihood value is equal to 3.84 (or other level, if set diffe
 
 data(GastricCancer)
 
-# The following will take about 10 sec. to run on an i7 CPU.
+# The following will take about 10 sec. to run on an i7-4690 CPU.
 # findU3(NPmle=c(1.816674, -1.002082), ConfInt=c(1.2, 0.5, 10),   
 #          LogLikfn=myLLfun, Pfun=Pfun, dataMat=GastricCancer)
 
