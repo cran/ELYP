@@ -12,8 +12,9 @@ the the confidence interval is for a 1-d parameter =Pfun(beta1,beta2).
 \arguments{
    \item{NPmle}{a vector containing the two NPMLE: beta1 hat and beta2 hat.}
    \item{ConfInt}{a vector of length 2. These are APPROXIMATE length of confidence intervals, as initial guess.}
-   \item{LogLikfn}{a function that takes the input of beta and dataMay and output the logliklihood value.} 
-   \item{Pfun}{A function of 2 variables: beta1 and beta2. Must be able to take vector input. Example: Pfun(x1, x2)= x1. }
+   \item{LogLikfn}{a function that takes the input of beta and dataMat and output the logliklihood value.} 
+   \item{Pfun}{A function of 2 variables: beta1 and beta2. Must be able to take vector input. output one value: The statistic you try to find the 
+               confidence interval of. Example: Pfun(x1, x2)= x1. }
    \item{dataMat}{a matrix of data. for the function LogLikfn.}
    \item{level}{Confidence level. Default to 3.84 (95 percent).}
 }
@@ -25,7 +26,10 @@ the the confidence interval is for a 1-d parameter =Pfun(beta1,beta2).
 \details{
 
 Basically we repeatedly testing the value of the parameter, until we find those
-which the -2 log likelihood value is equal to 3.84 (or other level, if set differently).
+which the -2 log likelihood value is equal to 3.84 (or other level, if set differently). 
+
+This problem may also be solved by the 
+nuisance parameter/profiling technique.
 
 }
 \author{ Mai Zhou }

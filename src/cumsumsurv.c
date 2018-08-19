@@ -5,6 +5,7 @@
 #include <float.h>
 
 #include <R_ext/Applic.h>
+#include <R_ext/Rdynload.h>   /* added 2018/2  */
 
 #define EPSILON DBL_EPSILON
 
